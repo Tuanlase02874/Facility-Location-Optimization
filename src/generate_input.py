@@ -1,0 +1,6 @@
+import sys
+import os
+
+NUMBER_FACILITY_LOCATION = 50            # |I\ = |J|
+NUMBER_COMPETETORS_FACILITY_LOCATION = 4 # p
+NUMBER_CUSTOMER = 1000
