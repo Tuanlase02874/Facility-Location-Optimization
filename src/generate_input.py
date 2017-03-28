@@ -3,7 +3,7 @@ from random import sample
 import matplotlib.pyplot as plt
 from collections import Counter
 
-NUMBER_FACILITY_LOCATION = 50            # |I\ = |J|
+NUMBER_FACILITY_LOCATION = 10           # |I\ = |J|
 NUMBER_COMPETITORS_FACILITY_LOCATION = 4 # p
 NUMBER_CUSTOMER = 1000
 PLAN_SIZE=(100,100)
