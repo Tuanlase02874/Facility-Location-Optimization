@@ -36,9 +36,7 @@ for i in range(NUMBER_FACILITY_LOCATION):
     node.append((randint(0, width), randint(0, height)))
 
 # Random create competitor facility
-competitor = []
-for i in range(NUMBER_COMPETITORS_FACILITY_LOCATION):
-    competitor = sample(range(1, NUMBER_FACILITY_LOCATION), NUMBER_COMPETITORS_FACILITY_LOCATION)
+competitor = sample(range(1, NUMBER_FACILITY_LOCATION), NUMBER_COMPETITORS_FACILITY_LOCATION)
 
 # Random customer
 q_i = Counter()
