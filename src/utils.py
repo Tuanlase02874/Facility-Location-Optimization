@@ -11,11 +11,14 @@ FILE_NAME = "input/P2_I10_K5_C4.txt"
 def utility_choice(node,customer_i,facility_j):
     return 0.1
 
+
 def distance_node(node_i, node_j):
     (x_i, y_i) = node_i
     (x_j, y_j) = node_j
     distance = 5.0 + 0.5*math.sqrt((x_i -x_j)**2 + (y_i - y_j)**2)
     return distance
+
+
 def read_data(fname=FILE_NAME,debug=False):
 
     theta=[]
@@ -33,7 +36,8 @@ def read_data(fname=FILE_NAME,debug=False):
 
     for k in range(K):
         permutation = fdata.readline().strip().split("\t")[1:]
-        permutations.append(permutation)
+        permutation_int = [int(i) for i in permutation]
+        permutations.append(permutation_int)
     if debug:
         print("%s Permutations: "%K)
         pprint.pprint(permutations)
@@ -44,7 +48,12 @@ def read_data(fname=FILE_NAME,debug=False):
     if debug:
         print("Lambda size [%s,%s]"%np.shape(np.array(theta)))
 
-    return (competitor,np.array(theta),np.array(permutations))
+    return (competitor,np.array(theta),permutations)
+
+
+def get_weak_option(permutation_k,option_j=1):
+    index = permutation_k.index(option_j)
+    return permutation_k[index+1:]
 
 #(competitor,theta,permutations) = read_data()
 
