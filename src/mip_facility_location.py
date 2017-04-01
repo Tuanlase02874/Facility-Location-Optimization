@@ -7,14 +7,13 @@ DEBUG = True
 CRITICAL_DEBUG = True
 FILE_NAME = "input/P2_I10_K5_C4.txt"
 file_2 = "input/P2_I3_K3_C1.data"
-
-(competitor, theta, permutations) = utils.read_data(file_2)
-(I, K) = np.shape(theta)
-J = len(permutations[0])
 #print(permutations[0])
 print(utils.get_weak_option(permutations[0],0))
 
-def mip_maximum_capture():
+def mip_maximum_capture(filename=FILE_NAME):
+    (competitor, theta, permutations) = utils.read_data(filename)
+    (I, K) = np.shape(theta)
+    J = len(permutations[0])
     prob = cplex.Cplex()
     prob.objective.set_sense(prob.objective.sense.maximize)
 
