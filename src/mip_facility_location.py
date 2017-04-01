@@ -3,12 +3,11 @@ from cplex.exceptions import CplexSolverError
 import numpy as np
 import utils
 
-DEBUG = True
-CRITICAL_DEBUG = True
+DEBUG = False
+CRITICAL_DEBUG = False
 FILE_NAME = "input/P2_I10_K5_C4.txt"
-file_2 = "input/P2_I3_K3_C1.data"
-#print(permutations[0])
-print(utils.get_weak_option(permutations[0],0))
+FILE_NAME_TEST = "input/P2_I3_K3_C1.data"
+
 
 def mip_maximum_capture(filename=FILE_NAME):
     (competitor, theta, permutations) = utils.read_data(filename)
