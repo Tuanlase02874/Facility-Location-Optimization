@@ -85,4 +85,11 @@ def mip_maximum_capture():
                     prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0], names=["e%s_%s_%s" % (i, k, j)])
     prob.write("models/maximum_capture.lp")
 
+    prob.solve()
+
+    # Display solution
+    print("Solution status = ", prob.solution.get_status())
+    for j in range(J):
+        print("x_%s : %s"%(j,prob.solution.get_values("x_%s"%j)))
+
 mip_maximum_capture()
