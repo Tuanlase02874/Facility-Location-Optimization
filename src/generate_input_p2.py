@@ -31,7 +31,7 @@ def write(competitor, theta, fname=FILE_NAME):
     fout = open("input/%s.txt"%fname, "w")
     fout.write("(NUMBER_COMPETITOR,I,J,K)\t(%s,%s,%s,%s)\n"%(NUMBER_COMPETITOR,I,J,K))
     fout.write("COMPETITORS\t%s\n" % "\t".join([str(i) for i in competitor]))
-    fout.write("%s Permutations:\n"%K)
+    #fout.write("%s Permutations:\n"%K)
     for k in range(K):
         facilities = [j for j in range(0,J)]
         random.shuffle(facilities)
