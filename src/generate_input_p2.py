@@ -4,10 +4,10 @@ import numpy as np
 import random
 import scipy.linalg
 
-NUMBER_COMPETITOR = 4
-I = 10
-J = 10
-K = 5
+NUMBER_COMPETITOR = 1
+I = 3
+J = 3
+K = 3
 FILE_NAME = "P2_I%s_K%s_C%s"%(I,K,NUMBER_COMPETITOR)
 
 
@@ -28,7 +28,7 @@ print("I=%s K=%s"%np.shape(np.array(theta)))
 
 
 def write(competitor, theta, fname=FILE_NAME):
-    fout = open("input/%s.txt"%fname, "w")
+    fout = open("input/%s.data"%fname, "w")
     fout.write("(NUMBER_COMPETITOR,I,J,K)\t(%s,%s,%s,%s)\n"%(NUMBER_COMPETITOR,I,J,K))
     fout.write("COMPETITORS\t%s\n" % "\t".join([str(i) for i in competitor]))
     #fout.write("%s Permutations:\n"%K)

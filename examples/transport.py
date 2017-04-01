@@ -68,7 +68,6 @@ def transport(convex):
 
             k = k + 1
 
-
     # Build model
     model = cplex.Cplex()
     model.objective.set_sense(model.objective.sense.minimize)
@@ -83,6 +82,7 @@ def transport(convex):
     colname_y = ["y" + str(j + 1) for j in range(n)]
     model.variables.add(obj=[1.0] * n, lb=[0.0] * n,
                         ub=[cplex.infinity] * n, names=colname_y)
+    model.write('model_examples/transport2.lp')
 
     # Supply must meet demand
     for i in range(nbSupply):
@@ -119,7 +119,7 @@ def transport(convex):
 
     # solve model
     model.solve()
-    model.write('transport.lp')
+    #model.write('model_examples/transport.lp')
 
     # Display solution
     print("Solution status = ", model.solution.get_status())

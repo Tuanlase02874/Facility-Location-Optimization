@@ -45,10 +45,11 @@ import cplex
 from cplex.exceptions import CplexError
 
 # data common to all populateby functions
-my_obj = [1.0, 2.0, 3.0, 1.0]
+my_obj = [0.4, 2.0, 3.0, 1.0]
 my_ub = [40.0, cplex.infinity, cplex.infinity, 3.0]
-my_lb = [0.0, 0.0, 0.0, 2.0]
+my_lb = [0.0, 0.0, 0.0, 2.003]
 my_ctype = "CCCI"
+my_ctype = ["C","C","C","I"]
 my_colnames = ["x1", "x2", "x3", "x4"]
 my_rhs = [20.0, 30.0, 0.0]
 my_rownames = ["r1", "r2", "r3"]
@@ -60,6 +61,8 @@ def populatebyrow(prob):
 
     prob.variables.add(obj=my_obj, lb=my_lb, ub=my_ub, types=my_ctype,
                        names=my_colnames)
+    print(my_colnames)
+    prob.write("model_examples/mipex2.lp")
 
     rows = [[["x1", "x2", "x3", "x4"], [-1.0, 1.0, 1.0, 10.0]],
             [["x1", "x2", "x3"], [1.0, -3.0, 1.0]],
