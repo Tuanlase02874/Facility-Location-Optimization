@@ -90,4 +90,4 @@ def mip_maximum_capture(filename=FILE_NAME):
     for j in range(J):
         print("x_%s : %s"%(j,prob.solution.get_values("x_%s"%j)))
 
-mip_maximum_capture()
+mip_maximum_capture(FILE_NAME_TEST)
