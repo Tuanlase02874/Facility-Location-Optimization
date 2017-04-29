@@ -132,4 +132,4 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
 
 if __name__ == "__main__":
     #mip_maximum_capture(FILE_NAME_TEST,1)
-    mip_maximum_capture(FILE_NAME_TEST2,6)
+    mip_maximum_capture(FILE_NAME_TEST2,1)
