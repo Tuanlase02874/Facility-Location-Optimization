@@ -9,7 +9,7 @@ FILE_NAME = "input/P2_I10_K5_C4.txt"
 FILE_NAME_TEST = "input/P2_I3_K3_C1.data"
 
 
-def mip_maximum_capture(filename=FILE_NAME):
+def mip_maximum_capture(filename=FILE_NAME,r=1):
     (competitor, theta, permutations) = utils.read_data(filename)
     (I, K) = np.shape(theta)
     J = len(permutations[0])
@@ -22,10 +22,10 @@ def mip_maximum_capture(filename=FILE_NAME):
         c[int(c_j)] = 2.0
     if DEBUG:
         print(str(c))
-    # Add varibales x_j
+    # Add variables x_j
     prob.variables.add(obj=[0.0] * J, lb=[0.0] * J, ub=[1.0] * J, types=["I"]*J,names=["x_%s"%j for j in range(J)])
 
-    # Add varibales y_i_k_j
+    # Add variables y_i_k_j
     n_y = I * K * J
     if DEBUG:
         print("Number Variable y(i_k_j) %s" % n_y)
@@ -56,7 +56,7 @@ def mip_maximum_capture(filename=FILE_NAME):
             row = [[ind, val]]
             prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0],names=["c%s_%s"%(i,k)])
 
-    # Add constrains (6)
+    # Add constraints (6)
     for i in range(I):
         for k in range(K):
             for j in range(J):
@@ -65,7 +65,7 @@ def mip_maximum_capture(filename=FILE_NAME):
                 row = [[ind, val]]
                 prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[0.0], names=["d%s_%s_%s" % (i, k, j)])
 
-    # Add constrains (7)
+    # Add constraints (7)
     for i in range(I):
         for k in range(K):
             for j in range(J):
@@ -81,6 +81,16 @@ def mip_maximum_capture(filename=FILE_NAME):
                     val.append(1.0)
                     row = [[ind, val]]
                     prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0], names=["e%s_%s_%s" % (i, k, j)])
+
+    # Add constraint (9)
+    ind =[]
+    for j in range(J):
+        ind.append("x_%s" % j)
+    val = [1.0] * J
+    row = [[ind, val]]
+    print(r)
+    prob.linear_constraints.add(lin_expr=row, senses="E", rhs=[r])
+
     prob.write("models/maximum_capture.lp")
 
     try:
@@ -95,4 +105,4 @@ def mip_maximum_capture(filename=FILE_NAME):
         print("x_%s : %s"%(j,prob.solution.get_values("x_%s"%j)))
 
 if __name__ == "__main__":
-    mip_maximum_capture(FILE_NAME_TEST)
+    mip_maximum_capture(FILE_NAME_TEST,2)
