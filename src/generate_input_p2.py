@@ -2,17 +2,16 @@ from random import randint
 from random import sample
 import numpy as np
 import random
-import scipy.linalg
 
-NUMBER_COMPETITOR = 3
-I = 10
-J = 10
+NUMBER_COMPETITOR = 1
+I = 3
+J = 3
 K = 3
 FILE_NAME = "P2_I%s_K%s_C%s"%(I,K,NUMBER_COMPETITOR)
 
 
 # Random competitors
-competitor = sample(range(1,J),NUMBER_COMPETITOR)
+competitor = sample(range(0,J),NUMBER_COMPETITOR)
 print(competitor)
 
 # Random lambda
