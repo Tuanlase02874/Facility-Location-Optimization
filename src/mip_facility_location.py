@@ -125,11 +125,11 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
             writer = csv.writer(csvfile, delimiter=',')
             writer.writerow(header)
     result = [I, J, K, len(competitor),r,prob.variables.get_num(),
-              prob.linear_constraints.get_num(), prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
+              prob.linear_constraints.get_num(), "%.2f" % prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
     with open('results/%s' % FILE_RESULTS, 'a') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(result)
 
 if __name__ == "__main__":
     #mip_maximum_capture(FILE_NAME_TEST,1)
-    mip_maximum_capture(FILE_NAME_TEST2,5)
+    mip_maximum_capture(FILE_NAME_TEST2,6)
