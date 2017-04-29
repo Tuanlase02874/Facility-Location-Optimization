@@ -4,9 +4,9 @@ import numpy as np
 import random
 import scipy.linalg
 
-NUMBER_COMPETITOR = 1
-I = 3
-J = 3
+NUMBER_COMPETITOR = 3
+I = 10
+J = 10
 K = 3
 FILE_NAME = "P2_I%s_K%s_C%s"%(I,K,NUMBER_COMPETITOR)
 

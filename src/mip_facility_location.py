@@ -2,11 +2,14 @@ import cplex
 from cplex.exceptions import CplexSolverError
 import numpy as np
 import utils
+import csv
 
 DEBUG = False
 CRITICAL_DEBUG = False
 FILE_NAME = "input/P2_I10_K5_C4.txt"
 FILE_NAME_TEST = "input/P2_I3_K3_C1.data"
+FILE_NAME_TEST2 = "input/P2_I10_K3_C3.data"
+FILE_RESULTS="mip_results.csv"
 
 
 def mip_maximum_capture(filename=FILE_NAME,r=1):
@@ -91,18 +94,42 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
     print(r)
     prob.linear_constraints.add(lin_expr=row, senses="E", rhs=[r])
 
-    prob.write("models/maximum_capture.lp")
 
+    prob.write("models/maximum_capture.lp")
+    start_time = prob.get_time()
     try:
         prob.solve()
     except CplexSolverError:
         print("Exception raised during solve")
         return
-
+    end_time = prob.get_time()
     # Display solution
     print("Solution status = ", prob.solution.get_status())
+    print("Solution value  = ", prob.solution.get_objective_value())
+    print("Running Time: ", end_time-start_time)
+    print(prob.linear_constraints.get_num())
+    print(prob.variables.get_num())
+    print("%s %s"%(I,J))
     for j in range(J):
         print("x_%s : %s"%(j,prob.solution.get_values("x_%s"%j)))
 
+    #Write result to file
+    header = ["I", "J", "K", "Number Competitors", "r (Number new facilities)", "Number Variables(x,y)",
+              "Number Constraints", "Objective Value", "Times (sec)"]
+    try:
+        csvfile = open('results/%s' % FILE_RESULTS, 'r')
+        print("Loaded Result File")
+    except FileNotFoundError:
+        print("Create new Result File")
+        with open('results/%s' % FILE_RESULTS, 'w') as csvfile:
+            writer = csv.writer(csvfile, delimiter=',')
+            writer.writerow(header)
+    result = [I, J, K, len(competitor),r,prob.variables.get_num(),
+              prob.linear_constraints.get_num(), prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
+    with open('results/%s' % FILE_RESULTS, 'a') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',')
+        writer.writerow(result)
+
 if __name__ == "__main__":
-    mip_maximum_capture(FILE_NAME_TEST,2)
+    #mip_maximum_capture(FILE_NAME_TEST,1)
+    mip_maximum_capture(FILE_NAME_TEST2,5)

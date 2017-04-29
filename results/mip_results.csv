@@ -1,0 +1,5 @@
+I,J,K,Number Competitors,r (Number new facilities),"Number Variables(x,y)",Number Constraints,Objective Value,Times (sec)
+10,10,3,3,1,310,601,10.0,0.0117
+10,10,3,3,2,310,601,10.0,0.0117
+10,10,3,3,4,310,601,10.0,0.0101
+10,10,3,3,5,310,601,10.0,0.0089
