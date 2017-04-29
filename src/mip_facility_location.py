@@ -47,7 +47,6 @@ def mip_maximum_capture(filename=FILE_NAME):
     prob.variables.add(obj=y_objective_factors, lb=[0.0]*n_y,ub=[cplex.infinity]*n_y, types=y_type,names=y_variable_name)
 
     # Add Constraints (5)
-
     for i in range(I):
         for k in range(K):
             ind = []
@@ -65,6 +64,7 @@ def mip_maximum_capture(filename=FILE_NAME):
                 val=[1.0,-1.0]
                 row = [[ind, val]]
                 prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[0.0], names=["d%s_%s_%s" % (i, k, j)])
+
     # Add constrains (7)
     for i in range(I):
         for k in range(K):
@@ -83,11 +83,16 @@ def mip_maximum_capture(filename=FILE_NAME):
                     prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0], names=["e%s_%s_%s" % (i, k, j)])
     prob.write("models/maximum_capture.lp")
 
-    prob.solve()
+    try:
+        prob.solve()
+    except CplexSolverError:
+        print("Exception raised during solve")
+        return
 
     # Display solution
     print("Solution status = ", prob.solution.get_status())
     for j in range(J):
         print("x_%s : %s"%(j,prob.solution.get_values("x_%s"%j)))
 
-mip_maximum_capture(FILE_NAME_TEST)
+if __name__ == "__main__":
+    mip_maximum_capture(FILE_NAME_TEST)
