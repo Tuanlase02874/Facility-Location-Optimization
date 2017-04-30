@@ -3,6 +3,7 @@ from cplex.exceptions import CplexSolverError
 import numpy as np
 import utils
 import csv
+import os
 
 DEBUG = False
 CRITICAL_DEBUG = False
@@ -186,4 +187,6 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
 
 if __name__ == "__main__":
     # mip_maximum_capture(FILE_NAME_TEST,1)
-    mip_maximum_capture(FILE_NAME_TEST,3)
+    file_name= os.listdir(os.getcwd()+"/input")
+    #print(file_name)
+    mip_maximum_capture("input/" + file_name[0],14)
