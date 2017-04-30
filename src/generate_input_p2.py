@@ -17,6 +17,8 @@ print(competitor)
 # Random lambda
 theta = []
 
+# Random q_i
+q = [randint(1,9)*1000  for i in range(I)]
 
 for i in range (I):
     theta_i = [randint(2,8)  for i in range(K)]
@@ -26,7 +28,7 @@ for i in range (I):
 print("I=%s K=%s"%np.shape(np.array(theta)))
 
 
-def write(competitor, theta, fname=FILE_NAME):
+def write(competitor, theta,q, fname=FILE_NAME):
     fout = open("input/%s.data"%fname, "w")
     fout.write("(NUMBER_COMPETITOR,I,J,K)\t(%s,%s,%s,%s)\n"%(NUMBER_COMPETITOR,I,J,K))
     fout.write("COMPETITORS\t%s\n" % "\t".join([str(i) for i in competitor]))
@@ -40,7 +42,11 @@ def write(competitor, theta, fname=FILE_NAME):
     #Write theta
     for i in range(I):
         fout.write("Lambda_%s:\t%s\n" % (i, "\t".join([str(la) for la in theta[i]])))
+
+    # Write p_i
+    fout.write("q:\t%s\n" % ("\t".join([str(q_i) for q_i in q])))
+
     fout.close()
 
-write(competitor,theta, FILE_NAME)
+write(competitor,theta,q, FILE_NAME)
 

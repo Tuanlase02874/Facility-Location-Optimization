@@ -48,7 +48,13 @@ def read_data(fname=FILE_NAME,debug=False):
     if debug:
         print("Lambda size [%s,%s]"%np.shape(np.array(theta)))
 
-    return (competitor,np.array(theta),permutations)
+    # Read q
+    q_str = fdata.readline().strip().split("\t")[1:]
+    q = [int(q_i) for q_i in q_str]
+    if debug:
+        print("q %s"% q)
+
+    return (competitor,np.array(theta),permutations,q)
 
 
 def get_weak_option(permutation_k,option_j=1):

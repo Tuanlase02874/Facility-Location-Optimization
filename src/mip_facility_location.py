@@ -13,7 +13,7 @@ FILE_RESULTS="mip_results.csv"
 
 
 def mip_maximum_capture(filename=FILE_NAME,r=1):
-    (competitor, theta, permutations) = utils.read_data(filename)
+    (competitor, theta, permutations,q) = utils.read_data(filename)
     (I, K) = np.shape(theta)
     J = len(permutations[0])
     prob = cplex.Cplex()
@@ -29,7 +29,7 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
     prob.variables.add(obj=[0.0] * J, lb=[0.0] * J, ub=[1.0] * J, types=["I"]*J,names=["x_%s"%j for j in range(J)])
 
     # Add variables y_i_k_j
-    n_y = I * K * J
+    n_y = I * J * K
     if DEBUG:
         print("Number Variable y(i_k_j) %s" % n_y)
     y_objective_factors = []
@@ -37,10 +37,10 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
     y_type = ["C" for i in range(n_y)]
     # y_i_k_j
     for i in range(I):
-        for k in range(K):
-            for j in range(I):
+        for j in range(J):
+            for k in range(K):
                 lambda_i_k = float(theta[i, k])
-                factor = lambda_i_k / c[j]
+                factor = q[i]*lambda_i_k / c[j]
                 y_variable_name.append("y_%s_%s_%s" % (i, k, j))
                 #y_objective_factors.append(float("{0:.1f}".format(factor)))
                 y_objective_factors.append(factor)
@@ -69,36 +69,67 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
                 prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[0.0], names=["d%s_%s_%s" % (i, k, j)])
 
     # Add constraints (7)
-    for i in range(I):
-        for k in range(K):
-            for j in range(J):
-                ts = utils.get_weak_option(permutations[k],j)
+    # for i in range(I):
+    #     for k in range(K):
+    #         for j in range(J):
+    #             ts = utils.get_weak_option(permutations[k],j)
+    #             if CRITICAL_DEBUG:
+    #                 print("ts = %s"%list(ts))
+    #             if (len(ts) > 0):
+    #                 ind = []
+    #                 for t in ts:
+    #                     ind.append("y_%s_%s_%s" % (i, k, t))
+    #                 val = [1.0]*len(ts)
+    #                 ind.append("x_%s"%j)
+    #                 val.append(1.0)
+    #                 row = [[ind, val]]
+    #                 prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0], names=["e%s_%s_%s" % (i, k, j)])
+
+    for j in range(J):
+        ind = []
+        for i in range(I):
+            for k in range(K):
+                ts = utils.get_weak_option(permutations[k], j)
                 if CRITICAL_DEBUG:
-                    print("ts = %s"%list(ts))
+                    print("ts = %s" % list(ts))
                 if (len(ts) > 0):
-                    ind = []
                     for t in ts:
                         ind.append("y_%s_%s_%s" % (i, k, t))
-                    val = [1.0]*len(ts)
-                    ind.append("x_%s"%j)
-                    val.append(1.0)
-                    row = [[ind, val]]
-                    prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0], names=["e%s_%s_%s" % (i, k, j)])
+        ind.append("x_%s" % j)
+        val = [1.0]*len(ind)
+        row = [[ind, val]]
+        prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[1.0])
 
     # Add constraints (8)
-    for i in range(I):
-        for k in range(K):
-            for c_j in competitor:
-                ts = utils.get_weak_option(permutations[k],int(c_j))
+    # for i in range(I):
+    #     for k in range(K):
+    #         for c_j in competitor:
+    #             ts = utils.get_weak_option(permutations[k],int(c_j))
+    #             if CRITICAL_DEBUG:
+    #                 print("ts = %s"%list(ts))
+    #             if (len(ts) > 0):
+    #                 ind = []
+    #                 for t in ts:
+    #                     ind.append("y_%s_%s_%s" % (i, k, t))
+    #                 val = [1.0]*len(ts)
+    #                 row = [[ind, val]]
+    #                 prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[0.0], names=["e%s_%s_%s" % (i, k, j)])
+
+    for c_j in competitor:
+        ind = []
+        for i in range(I):
+            for k in range(K):
+                ts = utils.get_weak_option(permutations[k], int(c_j))
                 if CRITICAL_DEBUG:
-                    print("ts = %s"%list(ts))
+                    print("ts = %s" % list(ts))
                 if (len(ts) > 0):
-                    ind = []
                     for t in ts:
                         ind.append("y_%s_%s_%s" % (i, k, t))
-                    val = [1.0]*len(ts)
-                    row = [[ind, val]]
-                    prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[0.0], names=["e%s_%s_%s" % (i, k, j)])
+        val = [1.0]*len(ind)
+        row = [[ind, val]]
+        prob.linear_constraints.add(lin_expr=row, senses="L", rhs=[0.0])
+
+
 
 
     # Add constraint (9)
@@ -155,4 +186,4 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
 
 if __name__ == "__main__":
     # mip_maximum_capture(FILE_NAME_TEST,1)
-    mip_maximum_capture(FILE_NAME_TEST2,10)
+    mip_maximum_capture(FILE_NAME_TEST,3)
