@@ -4,9 +4,9 @@ import numpy as np
 import random
 
 NUMBER_COMPETITOR = 5
-I = 6
-J = 6
-K = 3
+I = 50
+J = 30
+K = 50
 FILE_NAME = "P2_I%s_K%s_C%s"%(I,K,NUMBER_COMPETITOR)
 
 

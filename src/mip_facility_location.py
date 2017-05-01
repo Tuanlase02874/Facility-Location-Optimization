@@ -188,7 +188,7 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
 if __name__ == "__main__":
     # mip_maximum_capture(FILE_NAME_TEST,1)
     file_name= sorted(os.listdir(os.getcwd()+"/input"))
-    print(file_name[-5])
-    for i in range(1,7):
-        mip_maximum_capture("input/" + file_name[-6],i)
+    print(file_name[1])
+    for i in range(1,10):
+        mip_maximum_capture("input/P2_I50_K50_C5.data",i)
     #mip_maximum_capture(FILE_NAME_TEST, 3)
