@@ -14,10 +14,12 @@ FILE_RESULTS="mip_results.csv"
 
 
 def mip_maximum_capture(filename=FILE_NAME,r=1):
+
     (competitor, theta, permutations,q) = utils.read_data(filename)
     (I, K) = np.shape(theta)
     J = len(permutations[0])
     prob = cplex.Cplex()
+    start_time = prob.get_time()
     prob.objective.set_sense(prob.objective.sense.maximize)
 
     c = [1.0 for j in range(J)]
@@ -143,7 +145,7 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
     prob.linear_constraints.add(lin_expr=row, senses="E", rhs=[r])
 
     prob.write("models/maximum_capture.lp")
-    start_time = prob.get_time()
+    #start_time = prob.get_time()
     try:
 
         prob.solve()
@@ -187,13 +189,14 @@ def mip_maximum_capture(filename=FILE_NAME,r=1):
 
 if __name__ == "__main__":
     # mip_maximum_capture(FILE_NAME_TEST,1)
-    file_name= sorted(os.listdir(os.getcwd()+"/input"))
+    file_names= sorted(os.listdir(os.getcwd()+"/input"))
     #print(file_name[1])
     # for i in range(1,11):
     #     mip_maximum_capture("input/P2_I10_K30_C5.data", i)
 
-    for i in range(1, 11):
-        mip_maximum_capture("input/P2_I10_K30_C2.data", i)
-    # for i in range(1,10):
-    #     mip_maximum_capture("input/P2_I20_K30_C5.data",3)
+
+    #mip_maximum_capture("input/P2_I50_K50_C5.data", 5)
+    for file_name in file_names:
+        for i in [1,2,4,6,8]:
+            mip_maximum_capture("input/%s"%file_name,i)
     #mip_maximum_capture(FILE_NAME_TEST, 3)

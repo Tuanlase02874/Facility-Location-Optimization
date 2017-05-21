@@ -3,7 +3,7 @@ from random import sample
 import matplotlib.pyplot as plt
 from collections import Counter
 
-NUMBER_FACILITY_LOCATION = 10           # |I\ = |J|
+NUMBER_FACILITY_LOCATION = 50          # |I\ = |J|
 NUMBER_COMPETITORS_FACILITY_LOCATION = 4 # p
 NUMBER_CUSTOMER = 1000
 PLAN_SIZE=(100,100)
@@ -30,6 +30,24 @@ def save_figure(node,fname=file_name):
     plt.title("Location Customers and Facilities")
     fig.savefig('graph/%s.png' % fname)
 
+def generate_graph(node,competitor,fname=file_name):
+    fig = plt.figure()
+    ax = plt.subplot(111)
+    xs = [x for (x, y) in node]
+    ys = [y for (x, y) in node]
+    l1 = ax.scatter(xs, ys, c='r',marker='o',label="Geographical zone")
+    x_c=[]
+    y_c=[]
+    for c in competitor:
+        (x, y) = node[c]
+        x_c.append(x)
+        y_c.append(y)
+    lc = ax.scatter(x_c, y_c, c='b',marker='*',label="Competitor's facility")
+    ax.legend()
+    ax.grid()
+    # plt.title("The graphs G(V,E) represents a competitive environment")
+    fig.savefig('graph/%s.png' % fname)
+
 # Random create facility location
 (width, height)=PLAN_SIZE
 for i in range(NUMBER_FACILITY_LOCATION):
@@ -49,6 +67,7 @@ for i in range(NUMBER_CUSTOMER):
 write(node,competitor,q_i,file_name)
 #Plot facility location
 save_figure(node,file_name)
+generate_graph(node,competitor,"G_"+file_name)
 #plt.show()
 
 
