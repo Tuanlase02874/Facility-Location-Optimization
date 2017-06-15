@@ -5,8 +5,9 @@ You must have matplotlib for this to work.
 """
 import matplotlib.pyplot as plt
 import networkx as nx
+import random
 
-G=nx.complete_graph(70)
+G = nx
 nx.draw(G)
 plt.savefig("../graph/simple_path.png") # save as png
 plt.show() # display

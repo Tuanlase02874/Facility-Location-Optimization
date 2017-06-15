@@ -1,9 +1,10 @@
 from random import randint
+import sys
 from random import sample
 import matplotlib.pyplot as plt
 from collections import Counter
 
-NUMBER_FACILITY_LOCATION = 50          # |I\ = |J|
+NUMBER_FACILITY_LOCATION = int(sys.argv[1])       # |I\ = |J|
 NUMBER_COMPETITORS_FACILITY_LOCATION = 4 # p
 NUMBER_CUSTOMER = 1000
 PLAN_SIZE=(100,100)
@@ -14,7 +15,7 @@ file_name = "location_%s_%s"%(NUMBER_FACILITY_LOCATION,NUMBER_COMPETITORS_FACILI
 
 def write(node,competitor,customer, fname=file_name):
     index = 0
-    fout = open("input/%s.txt"%fname, "w")
+    fout = open("graph/%s.txt"%fname, "w")
     fout.write("Node\t%s\t%s\t%s\n" % ("x", "y","qi"))
     for (x,y) in node:
         index += 1
@@ -36,6 +37,8 @@ def generate_graph(node,competitor,fname=file_name):
     xs = [x for (x, y) in node]
     ys = [y for (x, y) in node]
     l1 = ax.scatter(xs, ys, c='r',marker='o',label="Geographical zone")
+    # for i in range(len(node)):
+    #     ax.annotate("Z_%s"%i, (xs[i], ys[i]))
     x_c=[]
     y_c=[]
     for c in competitor:
@@ -43,8 +46,10 @@ def generate_graph(node,competitor,fname=file_name):
         x_c.append(x)
         y_c.append(y)
     lc = ax.scatter(x_c, y_c, c='b',marker='*',label="Competitor's facility")
+    for i in range(len(competitor)):
+        ax.annotate("  c_%s"%i, (x_c[i], y_c[i]))
     ax.legend()
-    ax.grid()
+    # ax.grid()
     # plt.title("The graphs G(V,E) represents a competitive environment")
     fig.savefig('graph/%s.png' % fname)
 
@@ -67,7 +72,7 @@ for i in range(NUMBER_CUSTOMER):
 write(node,competitor,q_i,file_name)
 #Plot facility location
 save_figure(node,file_name)
-generate_graph(node,competitor,"G_"+file_name)
+generate_graph(node,competitor,file_name)
 #plt.show()
 
 
