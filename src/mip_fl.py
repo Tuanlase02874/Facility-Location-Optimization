@@ -62,7 +62,7 @@ def read_data_permutation(name_model=input_mode):
         ranks_customer_zones.append(ranks)
     return lamda_customer_zones, ranks_customer_zones
 
-def mip_maximum_capture(filename=input,r=1):
+def mip_maximum_capture(input_mode=input_mode,r=1):
 
     #(competitor, theta, permutations,q) = utils.read_data(filename)
     q,competitor = read_data_q_competitor(input_mode)
@@ -87,17 +87,16 @@ def mip_maximum_capture(filename=input,r=1):
     prob.variables.add(obj=[0.0] * J, lb=[0.0] * J, ub=[1.0] * J, types=["I"]*J,names=["x_%s"%j for j in range(J)])
 
     # Add variables y_i_k_j
-    n_y = I * J * K
-    if DEBUG:
-        print("Number Variable y(i_k_j) %s" % n_y)
+    index_variable_y = 0
     y_objective_factors = []
     y_variable_name = []
-    y_type = ["C" for i in range(n_y)]
+
     # y_i_k_j
     for i in range(I):
+        K = len(lamda_customer_zones[i])
         for j in range(J):
             for k in range(K):
-                lambda_i_k = float(theta[i, k])
+                lambda_i_k = lamda_customer_zones[i][k]
                 factor = q[i]*lambda_i_k / c[j]
                 y_variable_name.append("y_%s_%s_%s" % (i, k, j))
                 #y_objective_factors.append(float("{0:.1f}".format(factor)))
@@ -105,10 +104,13 @@ def mip_maximum_capture(filename=input,r=1):
     if DEBUG:
         print(y_objective_factors)
         print(y_variable_name)
+    n_y = len(y_variable_name)
+    y_type = ["C" for i in range(n_y)]
     prob.variables.add(obj=y_objective_factors, lb=[0.0]*n_y,ub=[cplex.infinity]*n_y, types=y_type,names=y_variable_name)
 
     # Add Constraints (5)
     for i in range(I):
+        K = len(lamda_customer_zones[i])
         for k in range(K):
             ind = []
             for j in range(J):
@@ -119,6 +121,7 @@ def mip_maximum_capture(filename=input,r=1):
 
     # Add constraints (6)
     for i in range(I):
+        K = len(lamda_customer_zones[i])
         for k in range(K):
             for j in range(J):
                 ind=["y_%s_%s_%s"%(i,k,j),"x_%s"%j]
@@ -128,9 +131,10 @@ def mip_maximum_capture(filename=input,r=1):
 
     # Add constraints (7)
     for i in range(I):
+        K = len(lamda_customer_zones[i])
         for k in range(K):
             for j in range(J):
-                ts = utils.get_weak_option(permutations[k],j)
+                ts = utils.get_weak_option(ranks_customer_zones[i][k],j)
                 if CRITICAL_DEBUG:
                     print("ts = %s"%list(ts))
                 if (len(ts) > 0):
@@ -160,9 +164,10 @@ def mip_maximum_capture(filename=input,r=1):
 
     # Add constraints (8)
     for i in range(I):
+        K = len(lamda_customer_zones[i])
         for k in range(K):
             for c_j in competitor:
-                ts = utils.get_weak_option(permutations[k],int(c_j))
+                ts = utils.get_weak_option(ranks_customer_zones[i][k],int(c_j))
                 if CRITICAL_DEBUG:
                     print("ts = %s"%list(ts))
                 if (len(ts) > 0):
@@ -226,25 +231,25 @@ def mip_maximum_capture(filename=input,r=1):
 
 
     # #Write result to file
-    # header = ["I", "J", "K", "Number Competitors", "r (Number new facilities)", "Number Variables(x,y)",
-    #           "Number Constraints", "Objective Value", "Times (sec)"]
-    # try:
-    #     csvfile = open('results/%s' % FILE_RESULTS, 'r')
-    #     print("Loaded Result File")
-    # except FileNotFoundError:
-    #     print("Create new Result File")
-    #     with open('results/%s' % FILE_RESULTS, 'w') as csvfile:
-    #         writer = csv.writer(csvfile, delimiter=',')
-    #         writer.writerow(header)
-    # result = [I, J, K, len(competitor),r,prob.variables.get_num(),
-    #           prob.linear_constraints.get_num(), "%.2f" % prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
-    # with open('results/%s' % FILE_RESULTS, 'a') as csvfile:
-    #     writer = csv.writer(csvfile, delimiter=',')
-    #     writer.writerow(result)
+    header = ["I", "J", "Number Competitors", "r (Number new facilities)", "Number Variables(x,y)",
+              "Number Constraints", "Objective Value", "Times (sec)"]
+    try:
+        csvfile = open('results/%s' % FILE_RESULTS, 'r')
+        print("Loaded Result File")
+    except FileNotFoundError:
+        print("Create new Result File")
+        with open('results/%s' % FILE_RESULTS, 'w') as csvfile:
+            writer = csv.writer(csvfile, delimiter=',')
+            writer.writerow(header)
+    result = [I, J, len(competitor),r,prob.variables.get_num(),
+              prob.linear_constraints.get_num(), "%.2f" % prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
+    with open('results/%s' % FILE_RESULTS, 'a') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',')
+        writer.writerow(result)
 
 if __name__ == "__main__":
     # mip_maximum_capture(FILE_NAME_TEST,1)
-    file_names= sorted(os.listdir(os.getcwd()+"/input"))
+    #file_names= sorted(os.listdir(os.getcwd()+"/input"))
     #print(file_name[1])
     # for i in range(1,11):
     #     mip_maximum_capture("input/P2_I10_K30_C5.data", i)
@@ -255,4 +260,5 @@ if __name__ == "__main__":
     #     for i in [1,2,4,6,8]:
     #         mip_maximum_capture("input/%s"%file_name,i)
     #mip_maximum_capture(FILE_NAME_TEST, 3)
-    read_data_permutation(input_mode)
+    #read_data_permutation(input_mode)
+    mip_maximum_capture(input_mode,4)
