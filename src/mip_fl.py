@@ -4,6 +4,7 @@ import numpy as np
 import utils
 import csv
 import os
+import pprint
 
 DEBUG = False
 CRITICAL_DEBUG = False
@@ -13,6 +14,24 @@ FILE_NAME_TEST2 = "input/P2_I10_K3_C3.data"
 FILE_RESULTS="mip_results.csv"
 
 input_mode="location_10_4_model"
+
+def collect_log_estimate(file_log):
+    ranks = []
+    lamda = []
+    with open(file_log, "rb") as f:
+        for line in f:
+            l = line.decode("utf-8").strip().replace("\n","")
+            if l.find("Ranking collect:") != -1:
+                #print(l)
+                rank_string = l.replace("Ranking collect:","").strip()
+                ranks.append([int(x) for x in rank_string.split()])
+            if l.find("Lamda:") != -1:
+                lamda = [float(theta) for theta in l.replace("Lamda: ","").strip().split()]
+    if DEBUG:
+        print("Number permutations: %d"%len(ranks))
+        print("Ranks[1][2] %d"%ranks[1][2])
+        print("Lamda: %s"%" ".join([str(x) for x in lamda]))
+    return ranks,lamda
 
 def read_data_q_competitor(name_model=input):
     q = []
@@ -25,23 +44,34 @@ def read_data_q_competitor(name_model=input):
                 q.append(int(l_data[3]))
             if l_data[0] == "Competitor:":
                 competitor = [int(com) for com in l_data[1:]]
-    print(competitor)
-    print(q)
+    if DEBUG:
+        print(competitor)
+        print(q)
     return q, competitor
+
+
+def read_data_permutation(name_model=input_mode):
+
+    log_path = os.getcwd()+"/training/%s"%input_mode
+    files_list_log = os.listdir(log_path)
+    lamda_customer_zones = []
+    ranks_customer_zones = []
+    for file_name_log in files_list_log:
+        ranks, lamda = collect_log_estimate(log_path+"/"+file_name_log)
+        lamda_customer_zones.append(lamda)
+        ranks_customer_zones.append(ranks)
+    return lamda_customer_zones, ranks_customer_zones
 
 def mip_maximum_capture(filename=input,r=1):
 
     #(competitor, theta, permutations,q) = utils.read_data(filename)
     q,competitor = read_data_q_competitor(input_mode)
-
+    lamda_customer_zones, ranks_customer_zones = read_data_permutation(input_mode)
 
     I = len(q)
     J = I
 
     # Load permutations an lamda
-
-
-
 
     prob = cplex.Cplex()
     start_time = prob.get_time()
@@ -195,22 +225,22 @@ def mip_maximum_capture(filename=input,r=1):
     #             print("Result %s :"%variable_name,prob.solution.get_values(variable_name))
 
 
-    #Write result to file
-    header = ["I", "J", "K", "Number Competitors", "r (Number new facilities)", "Number Variables(x,y)",
-              "Number Constraints", "Objective Value", "Times (sec)"]
-    try:
-        csvfile = open('results/%s' % FILE_RESULTS, 'r')
-        print("Loaded Result File")
-    except FileNotFoundError:
-        print("Create new Result File")
-        with open('results/%s' % FILE_RESULTS, 'w') as csvfile:
-            writer = csv.writer(csvfile, delimiter=',')
-            writer.writerow(header)
-    result = [I, J, K, len(competitor),r,prob.variables.get_num(),
-              prob.linear_constraints.get_num(), "%.2f" % prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
-    with open('results/%s' % FILE_RESULTS, 'a') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',')
-        writer.writerow(result)
+    # #Write result to file
+    # header = ["I", "J", "K", "Number Competitors", "r (Number new facilities)", "Number Variables(x,y)",
+    #           "Number Constraints", "Objective Value", "Times (sec)"]
+    # try:
+    #     csvfile = open('results/%s' % FILE_RESULTS, 'r')
+    #     print("Loaded Result File")
+    # except FileNotFoundError:
+    #     print("Create new Result File")
+    #     with open('results/%s' % FILE_RESULTS, 'w') as csvfile:
+    #         writer = csv.writer(csvfile, delimiter=',')
+    #         writer.writerow(header)
+    # result = [I, J, K, len(competitor),r,prob.variables.get_num(),
+    #           prob.linear_constraints.get_num(), "%.2f" % prob.solution.get_objective_value(), "%.4f"%(end_time-start_time)]
+    # with open('results/%s' % FILE_RESULTS, 'a') as csvfile:
+    #     writer = csv.writer(csvfile, delimiter=',')
+    #     writer.writerow(result)
 
 if __name__ == "__main__":
     # mip_maximum_capture(FILE_NAME_TEST,1)
@@ -218,10 +248,11 @@ if __name__ == "__main__":
     #print(file_name[1])
     # for i in range(1,11):
     #     mip_maximum_capture("input/P2_I10_K30_C5.data", i)
-    read_data_q_competitor()
+    #read_data_q_competitor()
 
     #mip_maximum_capture("input/P2_I50_K50_C5.data", 5)
     # for file_name in file_names:
     #     for i in [1,2,4,6,8]:
     #         mip_maximum_capture("input/%s"%file_name,i)
     #mip_maximum_capture(FILE_NAME_TEST, 3)
+    read_data_permutation(input_mode)
