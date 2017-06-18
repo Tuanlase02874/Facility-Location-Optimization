@@ -37,14 +37,14 @@ def collect_log_estimate(file_log):
         for line in f:
             l = line.decode("utf-8").strip().replace("\n","")
             if l.find("Ranking collect:") != -1:
-                print(l)
+                #print(l)
                 ranks.append(l.replace("Ranking collect:","").strip())
 
             if l.find("Lamda:") != -1:
                 lamda = [float(theta) for theta in l.replace("Lamda: ","").strip().split()]
-    print(len(ranks))
-    print(len(lamda))
-    print(lamda)
+    print("Number permutations: %d"%len(ranks))
+    #print(len(lamda))
+    print("Lamda: %s"%" ".join([str(x) for x in lamda]))
     return ranks,lamda
 
 #process_estimate(training_folder)
