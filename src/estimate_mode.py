@@ -2,9 +2,12 @@ import os
 import subprocess
 import re
 import codecs
+import sys
 
-
-input = "location_10_4"
+if len(sys.argv) == 1:
+    input = "location_10_4"
+else:
+    input = sys.argv[1]
 
 training_folder =  os.getcwd() + "/training/%s"%input
 
@@ -47,5 +50,5 @@ def collect_log_estimate(file_log):
     print("Lamda: %s"%" ".join([str(x) for x in lamda]))
     return ranks,lamda
 
-#process_estimate(training_folder)
-collect_log_estimate("Node_0_log")
+process_estimate(training_folder)
+#collect_log_estimate("Node_0_log")

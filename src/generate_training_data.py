@@ -77,6 +77,3 @@ for (x,y) in nodes:
             f.write(" ".join([str(pro_ass) for pro_ass in pro_assorts[i]]) + "\n")
 
     index += 1
-
-
-
