@@ -1,0 +1,864 @@
+Number of options: 30
+Size of codes: 100
+14 13 16 6 24 26 15 19 11 27 25 0 22 28 4 5 2 0 26 7 6 16 23 15 29 15 10 23 17 26 12 4 2 6 9 15 9 11 1 29 27 7 2 23 16 16 24 26 22 20 23 25 24 8 11 7 28 2 22 12 8 0 22 25 12 10 7 9 3 4 2 28 21 9 3 24 20 23 18 1 9 3 8 12 29 2 18 14 16 19 0 27 9 26 19 3 28 15 21 16 
+Size of probabilities: 100
+0.24 0.16 0.25 0.13 0.22 0.23 0.12 0.32 0.25 0.09 0.25 0.09 0.28 0.15 0.23 0.21 0.28 0.12 0.17 0.21 0.09 0.17 0.14 0.12 0.49 0.14 0.15 0.17 0.26 0.28 0.21 0.31 0.27 0.06 0.14 0.09 0.15 0.19 0.18 0.38 0.09 0.26 0.36 0.13 0.16 0.15 0.13 0.19 0.43 0.1 0.12 0.42 0.14 0.09 0.23 0.16 0.16 0.22 0.3 0.16 0.07 0.11 0.34 0.3 0.19 0.09 0.2 0.14 0.26 0.31 0.29 0.22 0.06 0.15 0.28 0.23 0.17 0.2 0.06 0.34 0.14 0.25 0.07 0.2 0.34 0.35 0.04 0.15 0.16 0.3 0.16 0.09 0.2 0.23 0.32 0.36 0.28 0.12 0.08 0.17 
+Number of assortments: 20
+Sizes of assortments: 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+-------------------Iteration: 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 101 rows and 201 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.04 ticks)
+***********************************************************
+Objective value of restricted master problem: 31.57
+Lamda: 1 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (12.31 ticks)
+Probing time = 0.02 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -1.000000e+02
+Best integer =  -4.000000e+01  Node =       0  Best node =  -1.000000e+02
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 2
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 60 rows and 120 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 40 rows, 81 columns, and 120 nonzeros.
+Presolve time = 0.00 sec. (0.07 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            11.870000
+***********************************************************
+Objective value of restricted master problem: 22.17
+Lamda: 0.36 0.64 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.31 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -8.000000e+01
+Best integer =  -8.000000e+00  Node =       0  Best node =  -8.000000e+01
+Best integer =  -2.800000e+01  Node =       0  Best node =  -4.000000e+01
+Best integer =  -4.000000e+01  Node =       0  Best node =  -4.000000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 3
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 40 rows and 80 columns.
+Reduced LP has 61 rows, 123 columns, and 183 nonzeros.
+Presolve time = 0.00 sec. (0.06 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             8.000000
+***********************************************************
+Objective value of restricted master problem: 15.59
+Lamda: 0.35 0.39 0.26 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.32 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -6.200000e+01
+Best integer =  -2.000000e+00  Node =       0  Best node =  -6.200000e+01
+Best integer =  -3.200000e+01  Node =       0  Best node =  -3.600000e+01
+Best integer =  -3.600000e+01  Node =       0  Best node =  -3.600000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 4
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 22 rows and 44 columns.
+Reduced LP has 79 rows, 160 columns, and 240 nonzeros.
+Presolve time = 0.00 sec. (0.07 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             3.650000
+Iteration:    62   Dual objective     =             9.650000
+***********************************************************
+Objective value of restricted master problem: 9.95
+Lamda: 0.26 0.28 0.18 0.28 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.97 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.31 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -5.500000e+01
+Best integer =  -1.600000e+01  Node =       0  Best node =  -2.600000e+01
+Best integer =  -2.600000e+01  Node =       0  Best node =  -2.600000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 5
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 17 rows and 34 columns.
+Reduced LP has 84 rows, 171 columns, and 271 nonzeros.
+Presolve time = 0.00 sec. (0.07 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             2.580000
+Iteration:    62   Dual objective     =             7.220000
+***********************************************************
+Objective value of restricted master problem: 7.63
+Lamda: 0.19 0.28 0.19 0.17 0.17 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.99 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.31 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -5.100000e+01
+Best integer =  -2.000000e+00  Node =       0  Best node =  -5.100000e+01
+Best integer =  -2.200000e+01  Node =       0  Best node =  -2.800000e+01
+Best integer =  -2.800000e+01  Node =       0  Best node =  -2.800000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 6
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 8 rows and 16 columns.
+Reduced LP has 93 rows, 190 columns, and 310 nonzeros.
+Presolve time = 0.00 sec. (0.07 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             1.320000
+Iteration:    62   Dual objective     =             5.120000
+***********************************************************
+Objective value of restricted master problem: 5.73
+Lamda: 0.18 0.22 0.15 0.18 0.16 0.11 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.99 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (12.31 ticks)
+Probing time = 0.02 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.200000e+01
+Best integer =  -2.500000e+01  Node =       0  Best node =  -2.550000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 7
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 2 columns.
+Reduced LP has 100 rows, 205 columns, and 345 nonzeros.
+Presolve time = 0.00 sec. (0.08 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.340000
+Iteration:    62   Dual objective     =             3.920000
+***********************************************************
+Objective value of restricted master problem: 4.41
+Lamda: 0.14 0.19 0.14 0.17 0.15 0.12 0.09 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.02 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.500000e+01
+Best integer =  -4.000000e+00  Node =       0  Best node =  -4.500000e+01
+Best integer =  -2.000000e+01  Node =       0  Best node =  -2.400000e+01
+Best integer =  -2.400000e+01  Node =       0  Best node =  -2.400000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 8
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 2 columns.
+Reduced LP has 100 rows, 206 columns, and 366 nonzeros.
+Presolve time = 0.00 sec. (0.08 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.270000
+Iteration:    62   Dual objective     =             3.280000
+***********************************************************
+Objective value of restricted master problem: 3.63
+Lamda: 0.13 0.16 0.12 0.16 0.14 0.12 0.1 0.07 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (50.01 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.31 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.500000e+01
+Best integer =  -4.000000e+00  Node =       0  Best node =  -4.500000e+01
+Best integer =  -1.700000e+01  Node =       0  Best node =  -2.200000e+01
+Best integer =  -2.100000e+01  Node =       0  Best node =  -2.200000e+01
+
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  5
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 9
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.160000
+Iteration:    62   Dual objective     =             2.870000
+***********************************************************
+Objective value of restricted master problem: 3.27
+Lamda: 0.11 0.17 0.115 0.135 0.145 0.11 0.105 0.075 0.035 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.31 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -5.000000e+01
+Best integer =  -2.000000e+00  Node =       0  Best node =  -5.000000e+01
+Best integer =  -2.000000e+01  Node =       0  Best node =  -2.000000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 10
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.160000
+Iteration:    62   Dual objective     =             2.440000
+***********************************************************
+Objective value of restricted master problem: 2.7
+Lamda: 0.11 0.145 0.115 0.135 0.14 0.1 0.085 0.075 0.04 0.055 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.99 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.500000e+01
+Best integer =  -3.000000e+00  Node =       0  Best node =  -4.500000e+01
+Best integer =  -1.200000e+01  Node =       0  Best node =  -1.866667e+01
+Best integer =  -1.800000e+01  Node =       0  Best node =  -1.866667e+01
+
+Gomory fractional cuts applied:  8
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 11
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             2.000000
+***********************************************************
+Objective value of restricted master problem: 2.37667
+Lamda: 0.09 0.133333 0.113333 0.126667 0.15 0.0966667 0.0833333 0.0766667 0.0433333 0.0566667 0.03 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.97 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   3.330669e-16  Node =       0  Best node =  -4.533333e+01
+Best integer =  -1.533333e+01  Node =       0  Best node =  -1.866667e+01
+Best integer =  -1.800000e+01  Node =       0  Best node =  -1.866667e+01
+Best integer =  -1.866667e+01  Node =       0  Best node =  -1.866667e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 12
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             1.823333
+***********************************************************
+Objective value of restricted master problem: 2.19
+Lamda: 0.0869231 0.133846 0.102308 0.123077 0.15 0.09 0.0807692 0.0838462 0.0469231 0.0584615 0.0261538 0.0176923 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.200000e+01
+Best integer =  -2.000000e+01  Node =       0  Best node =  -2.266667e+01
+Best integer =  -2.200000e+01  Node =       0  Best node =  -2.200000e+01
+
+Gomory fractional cuts applied:  5
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 13
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             1.663846
+***********************************************************
+Objective value of restricted master problem: 2.02
+Lamda: 0.0725 0.125 0.095 0.1175 0.145 0.085 0.0825 0.085 0.0525 0.055 0.0375 0.025 0.0225 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.000000e+01
+Best integer =  -1.200000e+01  Node =       0  Best node =  -2.000000e+01
+Best integer =  -1.600000e+01  Node =       0  Best node =  -2.000000e+01
+Best integer =  -1.800000e+01  Node =       0  Best node =  -2.000000e+01
+Best integer =  -1.900000e+01  Node =      11  Best node =  -2.000000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 14
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             1.490000
+***********************************************************
+Objective value of restricted master problem: 1.81
+Lamda: 0.06 0.116667 0.0733333 0.113333 0.146667 0.08 0.0866667 0.09 0.0566667 0.0533333 0.0433333 0.0233333 0.03 0.0266667 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.97 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.04 ticks)
+Probing time = 0.03 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   4.440892e-16  Node =       0  Best node =  -4.000000e+01
+Best integer =  -2.000000e+00  Node =       0  Best node =  -4.000000e+01
+Best integer =  -1.200000e+01  Node =       0  Best node =  -1.800000e+01
+Best integer =  -1.400000e+01  Node =       0  Best node =  -1.800000e+01
+Best integer =  -1.700000e+01  Node =       0  Best node =  -1.800000e+01
+
+Gomory fractional cuts applied:  5
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 15
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             1.320000
+***********************************************************
+Objective value of restricted master problem: 1.53
+Lamda: 0.06 0.11 0.07 0.11 0.13 0.08 0.07 0.09 0.06 0.06 0.04 0.02 0.03 0.03 0.04 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.99 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -3.800000e+01
+Best integer =  -8.000000e+00  Node =       0  Best node =  -1.900000e+01
+Best integer =  -1.500000e+01  Node =       0  Best node =  -1.900000e+01
+Best integer =  -1.600000e+01  Node =       0  Best node =  -1.900000e+01
+Best integer =  -1.800000e+01  Node =       0  Best node =  -1.900000e+01
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 16
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.07 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             1.020000
+***********************************************************
+Objective value of restricted master problem: 1.26167
+Lamda: 0.0675 0.104167 0.0708333 0.106667 0.129167 0.0675 0.07 0.0875 0.0633333 0.06 0.03 0.0233333 0.0225 0.0258333 0.0358333 0.0358333 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.10 sec. (49.99 ticks)
+Probing time = 0.04 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (12.05 ticks)
+Probing time = 0.10 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.333333e+01
+Best integer =  -1.733333e+01  Node =       0  Best node =  -1.913095e+01
+Best integer =  -1.833333e+01  Node =       0  Best node =  -1.913095e+01
+
+Gomory fractional cuts applied:  3
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 17
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.08 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             0.852105
+***********************************************************
+Objective value of restricted master problem: 1.07909
+Lamda: 0.0690909 0.0972727 0.0681818 0.102727 0.129091 0.0663636 0.0672727 0.0818182 0.0672727 0.0627273 0.0327273 0.0245455 0.0209091 0.0272727 0.0336364 0.03 0.0190909 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.07 sec. (49.97 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.04 ticks)
+Probing time = 0.04 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.281818e+01
+Best integer =  -1.363636e+00  Node =       0  Best node =  -4.281818e+01
+Best integer =  -1.400000e+01  Node =       0  Best node =  -2.154545e+01
+Best integer =  -1.600000e+01  Node =       0  Best node =  -2.154545e+01
+Best integer =  -1.700000e+01  Node =       1  Best node =  -2.099645e+01
+Best integer =  -1.736364e+01  Node =      18  Best node =  -2.054545e+01
+Best integer =  -1.800000e+01  Node =      29  Best node =  -2.054545e+01
+Best integer =  -1.818182e+01  Node =      55  Best node =  -2.009091e+01
+Best integer =  -1.854545e+01  Node =      64  Best node =  -2.004545e+01
+Best integer =  -1.900000e+01  Node =      66  Best node =  -2.004545e+01
+
+Gomory fractional cuts applied:  8
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 18
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.08 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             0.806667
+***********************************************************
+Objective value of restricted master problem: 1.01935
+Lamda: 0.0629348 0.101957 0.0642391 0.103478 0.126413 0.063587 0.0633696 0.0870652 0.0665217 0.0581522 0.0305435 0.0259783 0.0222826 0.0277174 0.04 0.0275 0.016413 0.0118478 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.98 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.00 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.130435e+01
+Best integer =  -1.782609e+00  Node =       0  Best node =  -4.130435e+01
+Best integer =  -1.119565e+01  Node =       0  Best node =  -1.871196e+01
+Best integer =  -1.669565e+01  Node =       0  Best node =  -1.871196e+01
+Best integer =  -1.739130e+01  Node =       0  Best node =  -1.871196e+01
+
+Zero-half cuts applied:  60
+Lift and project cuts applied:  6
+Gomory fractional cuts applied:  43
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 19
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.08 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             0.726667
+***********************************************************
+Objective value of restricted master problem: 0.906
+Lamda: 0.0645 0.0935 0.065 0.1025 0.127 0.063 0.064 0.0855 0.065 0.0615 0.03075 0.02675 0.01525 0.02475 0.0385 0.03125 0.02075 0.01025 0.01025 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (49.99 ticks)
+Probing time = 0.00 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.05 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =  -2.220446e-16  Node =       0  Best node =  -4.080000e+01
+Best integer =  -1.520000e+01  Node =       0  Best node =  -1.966667e+01
+Best integer =  -1.840000e+01  Node =       0  Best node =  -1.966667e+01
+
+Zero-half cuts applied:  2
+Gomory fractional cuts applied:  2
+***********************************************************
+
+***********************************************************
+-------------------Iteration: 20
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.08 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:    62   Dual objective     =             0.616071
+***********************************************************
+Objective value of restricted master problem: 0.781429
+Lamda: 0.0607143 0.09 0.0607143 0.0964286 0.126429 0.06 0.0578571 0.0857143 0.0657143 0.0607143 0.0335714 0.0278571 0.0157143 0.0228571 0.0378571 0.0357143 0.0207143 0.0121429 0.0135714 0.0157143 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 16675 rows and 0 columns.
+Aggregator did 435 substitutions.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.08 sec. (49.98 ticks)
+Probing time = 0.01 sec. (0.56 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 8540 rows, 535 columns, and 25260 nonzeros.
+Reduced MIP has 435 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (12.04 ticks)
+Probing time = 0.10 sec. (0.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   0.000000e+00  Node =       0  Best node =  -4.585714e+01
+Best integer =  -1.528571e+01  Node =       0  Best node =  -1.726190e+01
+Best integer =  -1.628571e+01  Node =       0  Best node =  -1.723445e+01
+
+Implied bound cuts applied:  2
+Gomory fractional cuts applied:  3
+***********************************************************
+
+***********************************************************
+Ranking data list: 
+Ranking collect: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 
+Ranking collect: 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+Ranking collect: 4 5 9 7 12 0 17 18 2 15 14 24 16 3 1 10 6 13 11 19 22 8 20 23 21 25 26 27 28 29 
+Ranking collect: 22 4 16 12 19 23 8 7 5 3 2 6 0 15 11 20 1 9 10 13 14 17 18 21 24 25 26 27 28 29 
+Ranking collect: 19 11 22 2 29 9 4 5 1 8 3 0 12 7 13 14 17 10 23 6 15 18 20 16 21 24 25 26 27 28 
+Ranking collect: 11 21 20 25 14 3 29 6 12 7 26 23 2 15 5 8 22 28 4 9 1 16 18 27 0 24 19 17 13 10 
+Ranking collect: 23 1 5 7 8 3 9 4 22 25 0 2 12 10 16 6 13 14 17 18 20 26 11 15 19 21 24 27 28 29 
+Ranking collect: 12 29 1 25 28 2 5 4 10 3 8 23 13 16 26 9 7 6 14 0 11 17 18 19 20 15 21 22 24 27 
+Ranking collect: 2 24 16 3 4 7 22 0 19 9 1 5 8 11 12 28 6 15 10 13 20 25 14 17 18 26 21 23 27 29 
+Ranking collect: 25 17 26 20 23 29 22 24 7 13 14 5 27 19 18 0 4 10 3 21 9 16 28 2 6 15 11 8 1 12 
+Ranking collect: 28 0 3 29 4 5 22 1 6 16 7 2 9 12 13 25 8 26 15 10 14 17 18 19 11 20 21 23 24 27 
+Ranking collect: 20 1 5 15 29 3 9 6 16 2 7 13 25 12 0 4 10 14 17 19 8 22 18 21 11 24 23 26 27 28 
+Ranking collect: 5 14 19 7 9 6 12 0 28 2 22 4 20 1 3 8 15 10 11 13 16 17 18 21 23 24 25 26 27 29 
+Ranking collect: 1 25 4 11 15 19 0 2 3 29 7 5 14 12 9 13 8 26 22 17 10 21 24 6 16 23 18 20 28 27 
+Ranking collect: 7 9 2 3 5 22 4 29 6 11 15 13 0 25 28 8 12 10 14 24 16 17 18 19 20 21 23 26 27 1 
+Ranking collect: 5 29 25 11 19 0 4 9 28 21 22 26 7 12 16 15 23 20 14 24 3 8 2 6 1 13 18 10 17 27 
+Ranking collect: 12 22 25 29 8 11 26 7 19 2 21 14 24 6 16 17 13 20 23 4 18 10 5 27 3 1 28 15 9 0 
+Ranking collect: 17 8 23 29 11 15 3 2 19 9 0 28 25 5 27 7 26 16 14 12 20 24 22 6 4 21 13 18 10 1 
+Ranking collect: 14 28 19 5 26 22 12 6 29 1 20 9 4 24 7 0 23 15 3 2 16 25 17 18 13 21 8 11 10 27 
+Ranking collect: 20 7 3 2 4 5 16 29 9 0 22 25 12 28 23 6 14 15 19 13 8 1 11 10 17 18 21 24 26 27 
+Ranking collect: 24 6 4 25 10 16 21 2 1 28 13 14 15 26 9 17 18 19 12 22 20 23 5 7 0 8 11 3 29 27 

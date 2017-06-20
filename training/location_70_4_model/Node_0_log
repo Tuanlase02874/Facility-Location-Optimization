@@ -1,0 +1,26 @@
+Number of options: 70
+Size of codes: 100
+13 52 23 53 55 12 45 62 64 30 38 65 31 20 23 35 50 65 66 18 4 15 57 27 53 22 15 14 23 60 5 19 21 69 51 49 36 58 66 60 21 39 63 2 11 24 50 48 4 41 41 58 4 67 39 47 53 62 41 16 40 59 69 58 4 66 38 54 62 64 2 53 30 44 68 7 68 1 10 28 20 58 27 31 38 30 46 64 47 15 51 66 12 43 46 26 25 0 60 1 
+Size of probabilities: 100
+0.11 0.39 0.31 0.08 0.11 0.29 0.53 0.08 0.05 0.05 0.03 0.56 0.04 0.11 0.26 0.1 0.13 0.44 0.1 0.23 0.13 0.22 0.06 0.52 0.07 0.25 0.14 0.11 0.17 0.34 0.12 0.12 0.29 0.29 0.18 0.32 0.25 0.02 0.08 0.33 0.34 0.41 0.1 0.1 0.04 0.35 0.21 0.1 0.15 0.18 0.13 0.02 0.11 0.42 0.31 0.41 0.06 0.1 0.14 0.29 0.08 0.44 0.32 0.03 0.13 0.11 0.02 0.71 0.1 0.06 0.23 0.18 0.19 0.3 0.1 0.09 0.03 0.65 0.04 0.18 0.16 0.04 0.71 0.05 0.04 0.08 0.1 0.08 0.5 0.24 0.2 0.14 0.42 0.15 0.09 0.01 0.03 0.63 0.13 0.19 
+Number of assortments: 20
+Sizes of assortments: 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+-------------------Iteration: 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 101 rows and 201 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.04 ticks)
+***********************************************************
+Objective value of restricted master problem: 31
+Lamda: 1 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 221375 rows and 0 columns.
+Aggregator did 2415 substitutions.
+Reduced MIP has 109900 rows, 2515 columns, and 329340 nonzeros.
+Reduced MIP has 2415 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 34.63 sec. (725.55 ticks)

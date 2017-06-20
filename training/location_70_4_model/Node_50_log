@@ -1,0 +1,21 @@
+Number of options: 70
+Size of codes: 100
+68 6 5 37 54 51 5 53 60 36 50 6 57 23 11 2 27 12 50 32 12 22 6 0 3 62 46 14 36 1 15 28 20 36 47 47 9 45 13 12 32 26 15 43 47 28 55 34 22 53 52 21 63 67 68 51 38 35 20 21 25 8 41 48 1 43 35 61 42 66 12 39 17 8 52 44 12 47 2 50 1 14 54 27 26 43 50 21 38 65 47 0 42 19 32 54 38 35 68 69 
+Size of probabilities: 100
+0.06 0.02 0.54 0.13 0.25 0.04 0.77 0.08 0.08 0.03 0.58 0.01 0.11 0.28 0.03 0.01 0.03 0.02 0.77 0.17 0.1 0.41 0.04 0.24 0.21 0.46 0.03 0.4 0.03 0.08 0.39 0.21 0.35 0.02 0.04 0.08 0.24 0.38 0.22 0.08 0.31 0.16 0.44 0.06 0.04 0.25 0.18 0.35 0.17 0.05 0.04 0.72 0.1 0.06 0.09 0.03 0.08 0.08 0.37 0.45 0.48 0.08 0.14 0.23 0.07 0.05 0.08 0.08 0.52 0.27 0.15 0.25 0.29 0.22 0.09 0.09 0.02 0.02 0.01 0.84 0.07 0.33 0.31 0.07 0.22 0.03 0.66 0.22 0.04 0.05 0.02 0.05 0.33 0.42 0.18 0.36 0.13 0.14 0.09 0.29 
+Number of assortments: 20
+Sizes of assortments: 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+-------------------Iteration: 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 101 rows and 201 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.04 ticks)
+***********************************************************
+Objective value of restricted master problem: 30.36
+Lamda: 1 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.

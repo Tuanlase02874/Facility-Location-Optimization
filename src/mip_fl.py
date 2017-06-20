@@ -5,6 +5,7 @@ import utils
 import csv
 import os
 import pprint
+import sys
 
 DEBUG = False
 CRITICAL_DEBUG = False
@@ -13,7 +14,7 @@ FILE_NAME_TEST = "input/P2_I3_K3_C1.data"
 FILE_NAME_TEST2 = "input/P2_I10_K3_C3.data"
 FILE_RESULTS="mip_results.csv"
 
-input_mode="location_10_4_model"
+#input_mode="location_10_4_model"
 
 def collect_log_estimate(file_log):
     ranks = []
@@ -33,7 +34,7 @@ def collect_log_estimate(file_log):
         print("Lamda: %s"%" ".join([str(x) for x in lamda]))
     return ranks,lamda
 
-def read_data_q_competitor(name_model=input):
+def read_data_q_competitor(name_model):
     q = []
     competitor = []
     with open("graph/%s"%name_model.replace("_model",".txt"),"r") as f:
@@ -50,9 +51,9 @@ def read_data_q_competitor(name_model=input):
     return q, competitor
 
 
-def read_data_permutation(name_model=input_mode):
+def read_data_permutation(name_model):
 
-    log_path = os.getcwd()+"/training/%s"%input_mode
+    log_path = os.getcwd()+"/training/%s"%name_model
     files_list_log = os.listdir(log_path)
     lamda_customer_zones = []
     ranks_customer_zones = []
@@ -62,7 +63,7 @@ def read_data_permutation(name_model=input_mode):
         ranks_customer_zones.append(ranks)
     return lamda_customer_zones, ranks_customer_zones
 
-def mip_maximum_capture(input_mode=input_mode,r=1):
+def mip_maximum_capture(input_mode,r=1):
 
     #(competitor, theta, permutations,q) = utils.read_data(filename)
     q,competitor = read_data_q_competitor(input_mode)
@@ -261,4 +262,8 @@ if __name__ == "__main__":
     #         mip_maximum_capture("input/%s"%file_name,i)
     #mip_maximum_capture(FILE_NAME_TEST, 3)
     #read_data_permutation(input_mode)
-    mip_maximum_capture(input_mode,4)
+    if len(sys.argv) == 1:
+        input_model = "location_10_4_model"
+    else:
+        input_model = sys.argv[1]
+    mip_maximum_capture(input_model,4)

@@ -1,4 +1,4 @@
-SYSTEM     = x86-64_osx
+SYSTEM     = x86-64_linux
 LIBFORMAT  = static_pic
 
 #------------------------------------------------------------
@@ -12,15 +12,15 @@ LIBFORMAT  = static_pic
 #CPLEXDIR      = ../../..
 #CONCERTDIR    = ../../../../concert
 
-CPLEXDIR      = /Users/mac/Applications/IBM/ILOG/CPLEX_Studio127/cplex
-CONCERTDIR    = /Users/mac/Applications/IBM/ILOG/CPLEX_Studio127/concert
+CPLEXDIR      =  /opt/ibm/ILOG/CPLEX_Studio1271/cplex
+CONCERTDIR    =  /opt/ibm/ILOG/CPLEX_Studio1271/concert
 
 # ---------------------------------------------------------------------
 # Compiler selection
 # ---------------------------------------------------------------------
 
-CCC = g++ -O0 -stdlib=libstdc++
-CC  = gcc -O0 -stdlib=libstdc++
+CCC = g++ -O0
+CC  = gcc -O0
 JAVAC = javac
 
 # ---------------------------------------------------------------------
@@ -44,7 +44,7 @@ CCLNDIRS  = -L$(CPLEXLIBDIR) -L$(CONCERTLIBDIR)
 CLNDIRS   = -L$(CPLEXLIBDIR)
 CCLNFLAGS = -lconcert -lilocplex -lcplex -lm -lpthread
 CLNFLAGS  = -lcplex -lm -lpthread
-JAVA      = java  -d64 -Djava.library.path=$(CPLEXDIR)/bin/x86-64_osx -classpath $(CPLEXJARDIR):
+JAVA      = java  -d64 -Djava.library.path=$(CPLEXDIR)/bin/x86-64_linux -classpath $(CPLEXJARDIR):
 
 
 all:
@@ -63,7 +63,7 @@ EXSRCC        = $(EXDIR)/src/c
 EXSRCCX       = $(EXDIR)/src/c_x
 #EXSRCCPP      = $(EXDIR)/src/cpp
 #EXSRCCPP      = /home/trungbq/Documents/FacilityLocation
-EXSRCCPP      = /Users/mac/Facility-Location-Optimization/estimate
+EXSRCCPP      = /home/stack/IRONIC/Facility-Location-Optimization/estimate
 EXSRCJAVA     = $(EXDIR)/src/java
 
 CFLAGS  = $(COPT)  -I$(CPLEXINCDIR)

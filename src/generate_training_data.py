@@ -6,7 +6,7 @@ import math
 
 
 NUMBER_CHOICE=5
-NUMBER_ASSORTMENT=3
+NUMBER_ASSORTMENT=20
 
 
 def read_data(file_name):

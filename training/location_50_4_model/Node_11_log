@@ -1,0 +1,35 @@
+Number of options: 50
+Size of codes: 100
+46 18 41 36 31 36 5 8 12 26 45 41 35 17 43 13 44 23 49 26 11 3 43 41 47 28 16 37 19 10 24 36 43 2 13 41 1 9 27 33 25 40 17 5 35 3 10 1 15 44 39 30 44 5 34 23 38 0 4 33 44 34 36 25 29 34 16 22 1 5 2 33 0 20 47 45 42 49 44 2 43 3 6 47 4 39 11 34 10 29 24 38 45 22 32 21 5 41 38 47 
+Size of probabilities: 100
+0.12 0.14 0.07 0.62 0.05 0.45 0.28 0.17 0.06 0.04 0.15 0.07 0.16 0.58 0.03 0.11 0.17 0.44 0.15 0.12 0.54 0.28 0.04 0.08 0.06 0.22 0.22 0.24 0.07 0.25 0.15 0.52 0.03 0.26 0.05 0.1 0.26 0.09 0.51 0.04 0.16 0.04 0.42 0.27 0.12 0.26 0.36 0.2 0.09 0.09 0.06 0.21 0.1 0.42 0.21 0.26 0.36 0.2 0.14 0.03 0.07 0.16 0.52 0.18 0.06 0.17 0.26 0.07 0.17 0.33 0.45 0.04 0.25 0.17 0.08 0.16 0.35 0.08 0.09 0.32 0.06 0.43 0.21 0.1 0.21 0.05 0.42 0.17 0.3 0.06 0.23 0.4 0.2 0.11 0.07 0.06 0.44 0.09 0.35 0.06 
+Number of assortments: 20
+Sizes of assortments: 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+-------------------Iteration: 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 1 time.
+LP Presolve eliminated 101 rows and 201 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.04 ticks)
+***********************************************************
+Objective value of restricted master problem: 29.09
+Lamda: 1 
+***********************************************************
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Strategy_CallbackReducedLP          0
+Tried aggregator 2 times.
+MIP Presolve eliminated 79625 rows and 0 columns.
+Aggregator did 1225 substitutions.
+Reduced MIP has 39620 rows, 1325 columns, and 118500 nonzeros.
+Reduced MIP has 1225 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 22.59 sec. (248.28 ticks)
+Probing time = 5.28 sec. (1.91 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 39620 rows, 1325 columns, and 118500 nonzeros.
+Reduced MIP has 1225 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.70 sec. (53.42 ticks)
+Probing time = 3.46 sec. (2.12 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
