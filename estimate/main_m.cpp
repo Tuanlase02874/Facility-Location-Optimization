@@ -203,7 +203,7 @@ main(int argc, char **argv)
        ///COLUMN GENERATION
        int it = 0;
        bool stop = false;
-       while(it < 20 && !stop)
+       while(it < 500 && !stop)
        {
            it++;
 
