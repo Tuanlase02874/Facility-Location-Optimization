@@ -266,4 +266,4 @@ if __name__ == "__main__":
         input_model = "location_10_4_model"
     else:
         input_model = sys.argv[1]
-    mip_maximum_capture(input_model,4)
+    mip_maximum_capture(input_model, 4)

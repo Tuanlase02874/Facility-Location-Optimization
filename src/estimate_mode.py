@@ -10,7 +10,7 @@ if len(sys.argv) == 1:
 else:
     input = sys.argv[1]
 
-training_folder =  os.getcwd() + "/training/%s"%input
+training_folder = os.getcwd() + "/training/%s"%input
 
 # for file_name in os.listdir(training_folder):
 #     #print(file_name)
@@ -25,7 +25,7 @@ def process_estimate(training_folder):
 
     for file_name in os.listdir(training_folder):
         #print(file_name)
-        file_out_path = "training/%s_model/%s_log"%(input,file_name)
+        file_out_path = "training/%s_model/%s_log"%(input, file_name)
         os.makedirs(os.path.dirname(file_out_path), exist_ok=True)
         with open(file_out_path, "w") as file_:
             shell_script = "./estimate/FL %s/%s"%(training_folder,file_name)
@@ -51,7 +51,7 @@ def collect_log_estimate(file_log):
     print("Number permutations: %d"%len(ranks))
     #print(len(lamda))
     print("Lamda: %s"%" ".join([str(x) for x in lamda]))
-    return ranks,lamda
+    return ranks, lamda
 
 
 start = timeit.default_timer()
