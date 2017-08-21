@@ -21,6 +21,7 @@ training_folder = os.getcwd() + "/training/%s"%input
 
 # Read logfile
 
+
 def process_estimate(training_folder):
 
     for file_name in os.listdir(training_folder):
@@ -33,6 +34,7 @@ def process_estimate(training_folder):
             p = subprocess.Popen(shell_script, stdout=file_, shell=True)
             p.wait()
             subprocess._cleanup()
+
 
 def collect_log_estimate(file_log):
 

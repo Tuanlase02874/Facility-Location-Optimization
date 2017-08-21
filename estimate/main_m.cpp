@@ -203,7 +203,7 @@ main(int argc, char **argv)
        ///COLUMN GENERATION
        int it = 0;
        bool stop = false;
-       while(it < 30 && !stop)
+       while(it <= 50 && !stop)
        {
            it++;
 
@@ -285,7 +285,10 @@ main(int argc, char **argv)
            }cout << endl;
            cout << "***********************************************************" << endl;
 
-
+           if(resMasterSolver.getObjValue() <= 0.4)
+           {
+               stop = true;
+           }
 
 //           for(i = 0; i < lamda.getSize(); i++)
 //           {

@@ -56,6 +56,7 @@ if len(sys.argv) == 1:
     input = "location_10_4.txt"
 else:
     input = sys.argv[1]
+    NUMBER_ASSORTMENT = int(sys.argv[2])
 
 nodes = read_data(input)
 
