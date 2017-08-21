@@ -1,5 +1,6 @@
 import os
 import sys
+import numpy
 
 training_file = "location_10_4_a40.log"
 testing_file = "location_10_4_a10"
@@ -53,12 +54,31 @@ def is_indecator(index, permutation):
         return 1.0
     return 0.0
 
-def predict(node, choices, ranks, lamda):
-    predict_pr_choice =[]
+
+def predict(choices, ranks, lamda):
+    predict_pr_choices =[]
+    for choice in choices:
+        predict_pr_choice = []
+        for c_f in choice:
+            pro = 0.0
+            for k in range(len(ranks)-1):
+                pro += lamda[k]*is_indecator(c_f, ranks[k])
+            #print("Probality: ", pro)
+            print(len(ranks))
+            print(len(lamda))
+            predict_pr_choice.append(pro)
+        predict_pr_choices.append(predict_pr_choice)
+    return predict_pr_choices
 
 
-    return predict_pr_choice
-
+def l2_norm_error(pr_choices, predict_pr_choices):
+    n = len(pr_choices)
+    error = 0.0
+    for i in range(n):
+        a = numpy.array(pr_choices[i])
+        b = numpy.array(predict_pr_choices[i])
+        error += numpy.linalg.norm(a - b)
+    return error/n
 if __name__ == '__main__':
     if len(sys.argv) == 3:
         training_file = sys.argv[1]
@@ -68,4 +88,7 @@ if __name__ == '__main__':
         testing_file = "location_10_4_a10"
     path = os.path.dirname(os.path.realpath(__file__))
     ranks, lamda = read_train_file(training_file)
-    node, choices, pr_choice = read_test_file(testing_file)
+    #print(lamda)
+    node, choices, pr_choices = read_test_file(testing_file)
+    predict_pr_choices = predict(choices, ranks, lamda)
+    print(l2_norm_error(pr_choices, predict_pr_choices))
