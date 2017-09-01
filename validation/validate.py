@@ -64,8 +64,8 @@ def predict(choices, ranks, lamda):
             for k in range(len(ranks)-1):
                 pro += lamda[k]*is_indecator(c_f, ranks[k])
             #print("Probality: ", pro)
-            print(len(ranks))
-            print(len(lamda))
+            #print(len(ranks))
+            #print(len(lamda))
             predict_pr_choice.append(pro)
         predict_pr_choices.append(predict_pr_choice)
     return predict_pr_choices
